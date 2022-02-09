@@ -7,7 +7,6 @@ $user= "root";
 $password= "2S0ooguiq45F";
 
 //Definir nomes das tabelas no banco de dados - CUIDADO AO MUDAR, é recomendado manter o padrão
-$usuariosDB = "usuarios";
-$historicoDB = "historico";
+$usuariosDB = "alunos";
 
 ?>

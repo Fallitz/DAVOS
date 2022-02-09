@@ -15,36 +15,9 @@
             dataCriacao varchar(20) DEFAULT NULL,
             horaCriacao varchar(20) DEFAULT NULL)
         ";
-        $criarHistorico = "CREATE TABLE IF NOT EXISTS `$historicoDB` (
-            id int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            idUser int(10) NOT NULL,
-            retirada int(100) DEFAULT NULL,
-            devolvida int(100) DEFAULT NULL,
-            qntCartaoPerdido int(100) DEFAULT 0,
-            dataRetirada varchar(20) DEFAULT NULL,
-            horaRetirada varchar(20) DEFAULT NULL,
-            dataDevolvida varchar(20) DEFAULT NULL,
-            horaDevolvida varchar(20) DEFAULT NULL,
-            createAt TIMESTAMP NULL,
-            updateAt TIMESTAMP NULL
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
-                $criarEstoque = "CREATE TABLE IF NOT EXISTS `$estoqueDB` (
-                    quantidade int(10)
-                ) ENGINE=InnoDB DEFAULT CHARSET=utf8";
     
-        $criarCampoData = "ALTER TABLE `$historicoDB` 
-        ADD COLUMN IF NOT EXISTS `createAt` TIMESTAMP NULL AFTER `horaDevolvida`;";
-        $criarCampoDate = "ALTER TABLE `$historicoDB`
-        ADD COLUMN IF NOT EXISTS `updateAt` TIMESTAMP NULL AFTER `createAt`;";
-        $criarQntEncontrado = "ALTER TABLE `$usuariosDB`
-        ADD COLUMN IF NOT EXISTS `qntTotalEncontrado` INT(100) DEFAULT 0 AFTER `qntTotalPerdido`;";
-
         $pdo->query($criarUsuarios);
-        $pdo->query($criarHistorico);
-        $pdo->query($criarEstoque);
-        $pdo->query($criarCampoData);
-        $pdo->query($criarCampoDate);
-        $pdo->query($criarQntEncontrado);
+        
 
     } catch (PDOException $e) {
         returnErro500($e);
