@@ -27,7 +27,7 @@
                             <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">DAVOS LEARN</h1>
                             <p class="mbr-text pb-3 mbr-fonts-style display-7">Uma empresa especializada em ensino de tecnologias do mundo da programação. Tenha consultoria especializada para levar sua transformação digital ao próximo nível.</p>
                             <div class="mbr-section-btn">
-                                <a class="btn btn-md btn-primary display-4" href="/davos/register" target="_self">CRIAR CONTA GRATUITA</a>
+                                <a class="btn btn-md btn-primary display-4" href="/register" target="_self">CRIAR CONTA GRATUITA</a>
                             </div>
                         </div>                 
                     </div>
