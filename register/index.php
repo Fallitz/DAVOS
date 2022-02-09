@@ -53,4 +53,10 @@
     <script src="assets/js/script.js"></script>
     <script type="text/javascript" src="assets/js/jquery-350min.js"></script>
 </body>
+<script Language=JavaScript>
+    var loc = window.location.href+'';
+    if (loc.indexOf('http://')==0){
+        window.location.href = loc.replace('http://','https://');
+    }
+</script>
 </html>
