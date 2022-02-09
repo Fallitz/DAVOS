@@ -6,13 +6,13 @@
         $pdo = new PDO("mysql:dbname=$db; host=$host", "$user", "$password");
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $criarUsuarios = "CREATE TABLE IF NOT EXISTS `$usuariosDB` (
-            uui varchar(32) NOT NULL PRIMARY KEY,
+            id varchar(150) NOT NULL PRIMARY KEY,
             nome varchar(150) DEFAULT NULL,
             phone varchar(20) DEFAULT NULL,
             email varchar(150) DEFAULT NULL,
             price int(10) DEFAULT NULL,
             password varchar(150) DEFAULT NULL,
-            status int(1) DEFAULT NULL,
+            status int(1) NOT NULL DEFAULT 1,
             note varchar(150) DEFAULT NULL,
             createAt varchar(20) DEFAULT NULL,
             updateAt varchar(20) DEFAULT NULL)
