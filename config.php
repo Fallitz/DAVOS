@@ -4,7 +4,7 @@
 $db="davos";
 $host= "localhost";
 $user= "root";
-$password= "davos123"; //ÓTIMA SENHA xD
+$password= "2S0ooguiq45F";
 
 //Definir nomes das tabelas no banco de dados - CUIDADO AO MUDAR, é recomendado manter o padrão
 $usuariosDB = "usuarios";

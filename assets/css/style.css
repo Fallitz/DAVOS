@@ -92,6 +92,7 @@ body {
 
 
 
+
 /* HEADER MENU  */
 .header {
   overflow: hidden;
@@ -137,6 +138,8 @@ body {
 
 
 
+
+
 /* BUTTONS HEADER MENU*/
 .buttonMenu {
   display: flex;
@@ -147,6 +150,10 @@ body {
   width: 10%;
   background-color: #003cffce;
 }
+
+
+
+
 
 /* MENSAGENS */
 .msgErrors {
