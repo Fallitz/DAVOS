@@ -2,7 +2,7 @@
 
 //Dados para conexão com banco de dados mysql/mariaDB
 $db="davos";
-$host= "";
+$host= "localhost:3306";
 $user= "root";
 $password= "2S0ooguiq45F";
 
