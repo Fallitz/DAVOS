@@ -14,7 +14,7 @@
             <div class="container-interface">                
                 <div class="content" id="content">
                     <div class="header">
-                        <img class="logo" id="logo" src="./assets/images/logo2.png"></img>     
+                        <img class="logo" id="logo" src="assets/images/logo2.png"></img>     
                         <div class="header-right">
                             <a class="active" href="/" target="_self" id="home" onclick="openHome()">Home</a>
                             <a id="register" href="/register" target="_self" onclick="openCadastro()">Register</a>
