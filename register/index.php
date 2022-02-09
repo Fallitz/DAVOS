@@ -16,7 +16,7 @@
                     <div class="header">
                         <img class="logo" id="logo" src="../assets/images/logo2.png"></img>     
                         <div class="header-right">
-                            <a href="/davos/" target="_self" id="home" onclick="openHome()">Home</a>
+                            <a id="home" href="/" target="_self" onclick="openHome()">Home</a>
                             <a class="active" id="register" href="/register" target="_self" onclick="openCadastro()">Register</a>
                             <a id="admin" href="/admin" target="_self" onclick="openAdmin()">Admin</a>      
                         </div>
