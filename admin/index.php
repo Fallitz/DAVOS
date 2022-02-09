@@ -33,10 +33,10 @@
                 </div>
                 <div class="msgErrors">
                     <div class="msgBox" id="msgBox">
-                        <img class="imgError" id="imgMsgBox" src="./assets/images/atencao.png" alt="">
+                        <img class="imgError" id="imgMsgBox" src="../assets/images/atencao.png" alt="">
                         <div class="msg" id="msg"></div>
                         <div class="closeMsg">
-                            <img class="imgClose" id="imgClose" src="./assets/images/closeMsg.png" onclick="closeError()" alt="">
+                            <img class="imgClose" id="imgClose" src="../assets/images/closeMsg.png" onclick="closeError()" alt="">
                         </div>
                     </div>
                 </div>

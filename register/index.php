@@ -17,8 +17,8 @@
                         <img class="logo" id="logo" src="../assets/images/logo2.png"></img>     
                         <div class="header-right">
                             <a href="/davos/" target="_self" id="home" onclick="openHome()">Home</a>
-                            <a class="active" id="register" href="/davos/register" target="_self" onclick="openCadastro()">Register</a>
-                            <a id="admin" href="/davos/admin" target="_self" onclick="openAdmin()">Admin</a>      
+                            <a class="active" id="register" href="/register" target="_self" onclick="openCadastro()">Register</a>
+                            <a id="admin" href="/admin" target="_self" onclick="openAdmin()">Admin</a>      
                         </div>
                     </div>
                     <div class="content_page" id="content_page">
@@ -40,10 +40,10 @@
                 </div>
                 <div class="msgErrors">
                     <div class="msgBox" id="msgBox">
-                        <img class="imgError" id="imgMsgBox" src="./assets/images/atencao.png" alt="">
+                        <img class="imgError" id="imgMsgBox" src="../assets/images/atencao.png" alt="">
                         <div class="msg" id="msg"></div>
                         <div class="closeMsg">
-                            <img class="imgClose" id="imgClose" src="./assets/images/closeMsg.png" onclick="closeError()" alt="">
+                            <img class="imgClose" id="imgClose" src="../assets/images/closeMsg.png" onclick="closeError()" alt="">
                         </div>
                     </div>
                 </div>
