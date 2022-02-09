@@ -33,11 +33,7 @@
                             <div class="closeMsgCadastro">
                                 <img class="imgCloseConsulta" id="imgCloseConsulta" src="./assets/images/closeMsg.png" onclick="goHome()" alt="">
                             </div>
-                            <div class="formUserAdmin" id="formUserAdmin">
-                                <input class="input" id="CodigoUserSignup" type="text" placeholder="Matrícula do colaborador" onkeypress="return ApenasLetrasConsulta(event,this);" required>
-                                <input class="input" id="inputNomeoUser" type="text" placeholder="Nome do colaborador" required>
-                                <button class="inputButton" id="buttonCadastrar">Cadastrar</button>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="footer_page">
