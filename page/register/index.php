@@ -14,7 +14,7 @@
     <link rel="icon" href="./../../assets/images/icon.png">
     <title>DAVOS LEARN - Register</title>
 </head>
-<body onkeypress="showChar(event);">
+<body>
     <div class="container-fluid">
         <div class="row">
             <div class="container-interface">                
