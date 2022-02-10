@@ -31,7 +31,7 @@
                     <div class="content_page" id="content_page">
                         <!–- ADMIN -–>
                         <div class="adminpage" id="adminpage">
-                            
+                            TESTE
                         </div>                       
                     </div>
                     <div class="footer_page">
