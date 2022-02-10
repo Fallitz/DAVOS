@@ -24,7 +24,7 @@
                         <div class="header-right">
                             <a id="home" href="/" target="_self" onclick="openHome()">Home</a>
                             <a class="active" id="register" href="/register" target="_self" onclick="openCadastro()">Register</a>
-                            <a id="admin" href="/admin" target="_self" onclick="openAdmin()">Admin</a>      
+                            <a id="admin" href="/page/admin" target="_self" onclick="openAdmin()">Admin</a>      
                         </div>
                     </div>
                     <div class="content_page" id="content_page">
