@@ -236,7 +236,9 @@ body {
   height: 80vh;
   justify-content: center;
   align-items: center;
-
+  animation-name: zoomin;
+  animation-duration: 0.5s;
+  opacity: 0.9;
 }
 
 
