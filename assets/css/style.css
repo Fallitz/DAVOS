@@ -246,7 +246,7 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.5);
-  z-index: 3;
+  z-index: 10;
   animation-name: zoomin;
   animation-duration: 0.5s;
   opacity: 0.9;
