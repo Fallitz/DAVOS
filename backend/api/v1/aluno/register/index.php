@@ -7,10 +7,10 @@
         
         $messages = "";
         $ok = false;
-        $statuscode = 200;
+        $statuscode = 500;
         $typePost = intval(isset($_POST["typePost"])) ? intval($_POST["typePost"]) : "";
         
-        if($typePost == 1) //1 - Cadastro de usuário
+        if($typePost == 1)
         {
             $email = isset($_POST["email"]) ? strval($_POST["email"]) : "";
             $selectUser = $pdo->prepare( "SELECT email FROM `$usuariosDB` WHERE email = :email;");

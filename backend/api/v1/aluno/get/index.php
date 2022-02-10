@@ -5,8 +5,10 @@
 
     if (!strcasecmp($_SERVER['REQUEST_METHOD'], 'GET')){
        
-        $selectUser = $pdo->prepare( "SELECT * FROM `$usuariosDB`;");
-        $selectUser->bindParam(':email', $email);
+        $id = isset($_GET["id"]) ? strval($_GET["id"]) : null;
+
+        $selectUser = $pdo->prepare( "SELECT * FROM `$usuariosDB` WHERE id = :id;");
+        $selectUser->bindParam(':id', $id);
         $selectUser->execute();
         $resultUser = $selectUser-> rowCount();
 
@@ -37,7 +39,7 @@
 
             } 
 
-            $messages = 'Usuários listados com sucesso';
+            $messages = 'Usuário listado com sucesso';
             $ok = true;   
             $statuscode = 200;   
 

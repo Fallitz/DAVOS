@@ -2,59 +2,41 @@
    
     require_once('../../../../PDO/connection.php');
     require_once('../../../../models/error.php');
+    require_once('../../../../models/util.php');
    
-    if($_POST){
+    if($_DELETE){
         
-        $messages = "";
         $ok = false;
-        $statuscode = 200;
-        $typePost = intval(isset($_POST["typePost"])) ? intval($_POST["typePost"]) : "";
+        $statuscode = 500;
+        $typePost = isset($_DELETE["typePost"]) ? intval($_DELETE["typePost"]) : "";
         
-        if($typePost == 1) //1 - Cadastro de usuário
+        if($typePost == 1)
         {
-            $email = isset($_POST["email"]) ? strval($_POST["email"]) : "";
-            $selectUser = $pdo->prepare( "SELECT email FROM `$usuariosDB` WHERE email = :email;");
-            $selectUser->bindParam(':email', $email);
+            $id = isset($_DELETE["id"]) ? strval($_DELETE["id"]) : "";
+
+            $selectUser = $pdo->prepare( "SELECT id, email FROM `$usuariosDB` WHERE id = :id;");
+            $selectUser->bindParam(':id', $id);
             $selectUser->execute();
             $resultUser = $selectUser-> rowCount();
             if($resultUser > 0){
-                $messages = 'Email já cadastrado';
-                $ok = false;   
-                $statuscode = 403;   
-            }else{
-               
-                $nome = isset($_POST["name"]) ? strval($_POST["name"]) : "";
-                $phone = isset($_POST["phone"]) ? strval($_POST["phone"]) : "";
-                $price = isset($_POST["price"]) ? intval($_POST["price"]) : "";
-                $password = isset($_POST["password"]) ? strval($_POST["password"]) : "";
-                $note = isset($_POST["note"]) ? strval($_POST["note"]) : "";
-                $createAt = date("Y-m-d H:i:s");
-                $updateAt = date("Y-m-d H:i:s");
-                $status = 1;
-                $uuid = uniqid(rand(), true);
+                foreach ($selectUser as $row) {  
+                    $idUser = $row['id'];
+                    $email = $row['email'];
+                    $deleteUser = $pdo->prepare( "DELETE FROM `$usuariosDB` WHERE id = :id and email = :email;");
+                    $deleteUser->bindParam(':id', $idUser);
+                    $deleteUser->bindParam(':email', $email);
+                    $deleteUser->execute();
 
-                $hash = "";
-                if(isset($_POST["price"])){
-                    $hash = password_hash($password, PASSWORD_DEFAULT);
+                    $messages = 'Usuário deletado com sucesso';
+                    $ok = true;   
+                    $statuscode = 200; 
                 }
 
-                $sql = "INSERT INTO $usuariosDB (id, nome, phone, email, price, password, status, note, createAt, updateAt) VALUES (:uuid, :nome, :phone, :email, :price, :password, :status, :note, :createAt, :updateAt)";
-                $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':uuid', $uuid);
-                $stmt->bindParam(':nome', $nome);
-                $stmt->bindParam(':phone', $phone);
-                $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':price', $price);
-                $stmt->bindParam(':password', $hash);
-                $stmt->bindParam(':status', $status);
-                $stmt->bindParam(':note', $note);
-                $stmt->bindParam(':createAt', $createAt);
-                $stmt->bindParam(':updateAt', $updateAt);
-                $stmt->execute();
-
-                $messages = 'Email cadastrado com sucesso';
-                $ok = true;   
-                $statuscode = 200; 
+            }else{
+            
+                $messages = 'Conta não encontrada';
+                $ok = false;   
+                $statuscode = 404;   
 
             }
 

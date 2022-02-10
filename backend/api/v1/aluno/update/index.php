@@ -2,59 +2,120 @@
    
     require_once('../../../../PDO/connection.php');
     require_once('../../../../models/error.php');
+    require_once('../../../../models/util.php');
    
-    if($_POST){
-        
-        $messages = "";
+    if($_PUT){
+
         $ok = false;
-        $statuscode = 200;
-        $typePost = intval(isset($_POST["typePost"])) ? intval($_POST["typePost"]) : "";
+        $statuscode = 500;
+        $typePost = intval(isset($_PUT["typePost"])) ? intval($_PUT["typePost"]) : "";
         
-        if($typePost == 1) //1 - Cadastro de usuário
+        if($typePost == 1)
         {
-            $email = isset($_POST["email"]) ? strval($_POST["email"]) : "";
-            $selectUser = $pdo->prepare( "SELECT email FROM `$usuariosDB` WHERE email = :email;");
-            $selectUser->bindParam(':email', $email);
+            $id = isset($_PUT["id"]) ? $_PUT["id"] : "";
+            $selectUser = $pdo->prepare( "SELECT id FROM `$usuariosDB` WHERE id = :id;");
+            $selectUser->bindParam(':id', $id);
             $selectUser->execute();
             $resultUser = $selectUser-> rowCount();
-            if($resultUser > 0){
-                $messages = 'Email já cadastrado';
-                $ok = false;   
-                $statuscode = 403;   
-            }else{
-               
-                $nome = isset($_POST["name"]) ? strval($_POST["name"]) : "";
-                $phone = isset($_POST["phone"]) ? strval($_POST["phone"]) : "";
-                $price = isset($_POST["price"]) ? intval($_POST["price"]) : "";
-                $password = isset($_POST["password"]) ? strval($_POST["password"]) : "";
-                $note = isset($_POST["note"]) ? strval($_POST["note"]) : "";
-                $createAt = date("Y-m-d H:i:s");
-                $updateAt = date("Y-m-d H:i:s");
-                $status = 1;
-                $uuid = uniqid(rand(), true);
 
-                $hash = "";
-                if(isset($_POST["price"])){
-                    $hash = password_hash($password, PASSWORD_DEFAULT);
+            if($resultUser > 0){
+
+                $nome = isset($_PUT["name"]) ? strval($_PUT["name"]) : null;
+                $email = isset($_PUT["email"]) ? strval($_PUT["email"]) : null;
+                $phone = isset($_PUT["phone"]) ? strval($_PUT["phone"]) : null;
+                $price = isset($_PUT["price"]) ? intval($_PUT["price"]) : null;
+                $password = isset($_PUT["password"]) ? strval($_PUT["password"]) : null;
+                $note = isset($_PUT["note"]) ? strval($_PUT["note"]) : null;
+                $status = isset($_PUT["status"]) ? intval($_PUT["status"]) : null;
+                $updateAt = date("Y-m-d H:i:s");
+
+                foreach ($selectUser as $row) {  
+
+                    $idUser = $row['id'];
+                  
+                    if ($nome != null) {
+                        $updateName = $pdo->prepare( "UPDATE `$usuariosDB` SET nome = :nome, updateAt=:updateAt WHERE id = :id;");
+                        $updateName->bindParam(':nome', $nome);
+                        $updateName->bindParam(':updateAt', $updateAt);
+                        $updateName->bindParam(':id', $idUser);
+                        $updateName->execute();
+    
+                        $messages[] = 'Nome alterado com sucesso';
+                    }
+
+                    if ($email != null) {
+                        $selectEmail = $pdo->prepare( "SELECT email FROM `$usuariosDB` WHERE email = :email;");
+                        $selectEmail->bindParam(':email', $email);
+                        $selectEmail->execute();
+                        $resultEmail = $selectEmail-> rowCount();
+                        if($resultEmail === 0){
+                            $updateEmail = $pdo->prepare( "UPDATE `$usuariosDB` SET email = :email, updateAt=:updateAt WHERE id = :id;");
+                            $updateEmail->bindParam(':email', $email);
+                            $updateEmail->bindParam(':updateAt', $updateAt);
+                            $updateEmail->bindParam(':id', $idUser);
+                            $updateEmail->execute();
+        
+                            $messages[] = 'Email alterado com sucesso';
+                        }
+    
+                    }
+                    
+                    if ($phone != null) {
+                        $updatePhone = $pdo->prepare( "UPDATE `$usuariosDB` SET phone = :phone, updateAt=:updateAt WHERE id = :id;");
+                        $updatePhone->bindParam(':phone', $phone);
+                        $updatePhone->bindParam(':updateAt', $updateAt);
+                        $updatePhone->bindParam(':id', $idUser);
+                        $updatePhone->execute();
+    
+                        $messages[] = 'Telefone alterado com sucesso';
+                    }
+                    if ($price != null) {
+                        $updatePrice = $pdo->prepare( "UPDATE `$usuariosDB` SET price = :price, updateAt=:updateAt WHERE id = :id;");
+                        $updatePrice->bindParam(':price', $price);
+                        $updatePrice->bindParam(':updateAt', $updateAt);
+                        $updatePrice->bindParam(':id', $idUser);
+                        $updatePrice->execute();
+    
+                        $messages[] = 'Preço alterado com sucesso';
+                    }
+                    if ($note != null) {
+                        $updateNote = $pdo->prepare( "UPDATE `$usuariosDB` SET note = :note, updateAt=:updateAt WHERE id = :id;");
+                        $updateNote->bindParam(':note', $note);
+                        $updateNote->bindParam(':updateAt', $updateAt);
+                        $updateNote->bindParam(':id', $idUser);
+                        $updateNote->execute();
+    
+                        $messages[] = 'Nota alterada com sucesso';
+                    }
+                    if ($password != null) {
+                        $hash = password_hash($password, PASSWORD_DEFAULT);
+                        $updatePassword = $pdo->prepare( "UPDATE `$usuariosDB` SET password = :password, updateAt=:updateAt  WHERE id = :id;");
+                        $updatePassword->bindParam(':password', $hash);
+                        $updatePassword->bindParam(':updateAt', $updateAt);
+                        $updatePassword->bindParam(':id', $idUser);
+                        $updatePassword->execute();
+    
+                        $messages[] = 'Senha alterada com sucesso';
+                    }
+                    if ($status != null) {
+                        $updateStatus = $pdo->prepare( "UPDATE `$usuariosDB` SET status = :status, updateAt=:updateAt WHERE id = :id;");
+                        $updateStatus->bindParam(':status', $status);
+                        $updateStatus->bindParam(':updateAt', $updateAt);
+                        $updateStatus->bindParam(':id', $idUser);
+                        $updateStatus->execute();
+    
+                        $messages[] = 'Status alterado com sucesso';
+                    }
                 }
 
-                $sql = "INSERT INTO $usuariosDB (id, nome, phone, email, price, password, status, note, createAt, updateAt) VALUES (:uuid, :nome, :phone, :email, :price, :password, :status, :note, :createAt, :updateAt)";
-                $stmt = $pdo->prepare($sql);
-                $stmt->bindParam(':uuid', $uuid);
-                $stmt->bindParam(':nome', $nome);
-                $stmt->bindParam(':phone', $phone);
-                $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':price', $price);
-                $stmt->bindParam(':password', $hash);
-                $stmt->bindParam(':status', $status);
-                $stmt->bindParam(':note', $note);
-                $stmt->bindParam(':createAt', $createAt);
-                $stmt->bindParam(':updateAt', $updateAt);
-                $stmt->execute();
-
-                $messages = 'Email cadastrado com sucesso';
                 $ok = true;   
                 $statuscode = 200; 
+                
+            }else{
+               
+                $messages = 'Conta não encontrada';
+                $ok = false;   
+                $statuscode = 404; 
 
             }
 
