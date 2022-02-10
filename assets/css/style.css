@@ -237,7 +237,7 @@ body {
 
 .adminpage {
   display: flex;
-  position: relative;
+  position: absolute;
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 15px;
