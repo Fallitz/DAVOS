@@ -40,13 +40,14 @@
                                         <div class="column">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <input class="card-text" placeholder="Nome" value="Edenilson Souza Santana" disabled/>
-                                                    <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
-                                                    <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
-                                                    <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
-                                                    <input class="card-text" placeholder="Nota" value="" disabled/>
-                                                    <input class="card-text" placeholder="Status" value="Ativo" disabled/>
-                                                    <a href="/page/admin/categories" class="btn btn-primary">X</a>
+                                                    <input class="card-text" placeholder="Nome" value="" disabled/>
+                                                    <input class="card-text" placeholder="Email" value="" disabled/>
+                                                    <input class="card-text" placeholder="Telefone" value="" disabled/>
+                                                    <input class="card-text" placeholder="Preço" value="" disabled/>
+                                                    <input class="card-text" placeholder="Observação" value="" disabled/>
+                                                    <input class="card-text" placeholder="Status" value="" disabled/>
+                                                    <a class="btn btn-primary">Edit</a>
+                                                    <a class="btn btn-primary">X</a>
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -55,9 +56,10 @@
                                                     <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
                                                     <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
                                                     <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
-                                                    <input class="card-text" placeholder="Nota" value="" disabled/>
+                                                    <input class="card-text" placeholder="Observação" value="" disabled/>
                                                     <input class="card-text" placeholder="Status" value="Ativo" disabled/>
-                                                    <a href="/page/admin/categories" class="btn btn-primary">X</a>
+                                                    <a class="btn btn-primary">Edit</a>
+                                                    <a class="btn btn-primary">X</a>
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -66,9 +68,10 @@
                                                     <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
                                                     <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
                                                     <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
-                                                    <input class="card-text" placeholder="Nota" value="" disabled/>
+                                                    <input class="card-text" placeholder="Observação" value="" disabled/>
                                                     <input class="card-text" placeholder="Status" value="Ativo" disabled/>
-                                                    <a href="/page/admin/categories" class="btn btn-primary">X</a>
+                                                    <a class="btn btn-primary">Edit</a>
+                                                    <a class="btn btn-primary">X</a>
                                                 </div>
                                             </div>
                                         </div>
