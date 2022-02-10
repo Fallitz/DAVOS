@@ -27,6 +27,7 @@
                 $password = isset($_POST["password"]) ? strval($_POST["password"]) : null;
                 $note = isset($_POST["note"]) ? strval($_POST["note"]) : null;
                 $status = isset($_POST["status"]) ? intval($_POST["status"]) : null;
+
                 $updateAt = date("Y-m-d H:i:s");
 
                 foreach ($selectUser as $row) {  
@@ -34,7 +35,7 @@
                     $idUser = $row['id'];
                   
                     if ($nome != null) {
-                        $updateName = $pdo->prepare( "UPDATE `$usuariosDB` SET nome = :nome, updateAt=:updateAt WHERE id = :id;");
+                        $updateName = $pdo->prepare( "UPDATE `$usuariosDB` SET nome = :nome, updateAt = :updateAt WHERE id = :id;");
                         $updateName->bindParam(':nome', $nome);
                         $updateName->bindParam(':updateAt', $updateAt);
                         $updateName->bindParam(':id', $idUser);
@@ -49,7 +50,7 @@
                         $selectEmail->execute();
                         $resultEmail = $selectEmail-> rowCount();
                         if($resultEmail === 0){
-                            $updateEmail = $pdo->prepare( "UPDATE `$usuariosDB` SET email = :email, updateAt=:updateAt WHERE id = :id;");
+                            $updateEmail = $pdo->prepare( "UPDATE `$usuariosDB` SET email = :email, updateAt = :updateAt WHERE id = :id;");
                             $updateEmail->bindParam(':email', $email);
                             $updateEmail->bindParam(':updateAt', $updateAt);
                             $updateEmail->bindParam(':id', $idUser);
@@ -61,7 +62,7 @@
                     }
                     
                     if ($phone != null) {
-                        $updatePhone = $pdo->prepare( "UPDATE `$usuariosDB` SET phone = :phone, updateAt=:updateAt WHERE id = :id;");
+                        $updatePhone = $pdo->prepare( "UPDATE `$usuariosDB` SET phone = :phone, updateAt = :updateAt WHERE id = :id;");
                         $updatePhone->bindParam(':phone', $phone);
                         $updatePhone->bindParam(':updateAt', $updateAt);
                         $updatePhone->bindParam(':id', $idUser);
@@ -70,7 +71,7 @@
                         $messages[] = 'Telefone alterado com sucesso';
                     }
                     if ($price != null) {
-                        $updatePrice = $pdo->prepare( "UPDATE `$usuariosDB` SET price = :price, updateAt=:updateAt WHERE id = :id;");
+                        $updatePrice = $pdo->prepare( "UPDATE `$usuariosDB` SET price = :price, updateAt = :updateAt WHERE id = :id;");
                         $updatePrice->bindParam(':price', $price);
                         $updatePrice->bindParam(':updateAt', $updateAt);
                         $updatePrice->bindParam(':id', $idUser);
@@ -79,7 +80,7 @@
                         $messages[] = 'Preço alterado com sucesso';
                     }
                     if ($note != null) {
-                        $updateNote = $pdo->prepare( "UPDATE `$usuariosDB` SET note = :note, updateAt=:updateAt WHERE id = :id;");
+                        $updateNote = $pdo->prepare( "UPDATE `$usuariosDB` SET note = :note, updateAt = :updateAt WHERE id = :id;");
                         $updateNote->bindParam(':note', $note);
                         $updateNote->bindParam(':updateAt', $updateAt);
                         $updateNote->bindParam(':id', $idUser);
@@ -89,7 +90,7 @@
                     }
                     if ($password != null) {
                         $hash = password_hash($password, PASSWORD_DEFAULT);
-                        $updatePassword = $pdo->prepare( "UPDATE `$usuariosDB` SET password = :password, updateAt=:updateAt  WHERE id = :id;");
+                        $updatePassword = $pdo->prepare( "UPDATE `$usuariosDB` SET password = :password, updateAt = :updateAt  WHERE id = :id;");
                         $updatePassword->bindParam(':password', $hash);
                         $updatePassword->bindParam(':updateAt', $updateAt);
                         $updatePassword->bindParam(':id', $idUser);
@@ -98,7 +99,7 @@
                         $messages[] = 'Senha alterada com sucesso';
                     }
                     if ($status != null) {
-                        $updateStatus = $pdo->prepare( "UPDATE `$usuariosDB` SET status = :status, updateAt=:updateAt WHERE id = :id;");
+                        $updateStatus = $pdo->prepare( "UPDATE `$usuariosDB` SET status = :status, updateAt = :updateAt WHERE id = :id;");
                         $updateStatus->bindParam(':status', $status);
                         $updateStatus->bindParam(':updateAt', $updateAt);
                         $updateStatus->bindParam(':id', $idUser);
