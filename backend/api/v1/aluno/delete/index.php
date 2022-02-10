@@ -4,15 +4,15 @@
     require_once('../../../../models/error.php');
     require_once('../../../../models/util.php');
    
-    if($_DELETE){
+    if($_POST){
         
         $ok = false;
         $statuscode = 500;
-        $typePost = isset($_DELETE["typePost"]) ? intval($_DELETE["typePost"]) : "";
+        $typePost = isset($_POST["typePost"]) ? intval($_POST["typePost"]) : "";
         
         if($typePost == 1)
         {
-            $id = isset($_DELETE["id"]) ? strval($_DELETE["id"]) : "";
+            $id = isset($_POST["id"]) ? strval($_POST["id"]) : "";
 
             $selectUser = $pdo->prepare( "SELECT id, email FROM `$usuariosDB` WHERE id = :id;");
             $selectUser->bindParam(':id', $id);

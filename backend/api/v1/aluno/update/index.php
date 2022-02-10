@@ -4,15 +4,15 @@
     require_once('../../../../models/error.php');
     require_once('../../../../models/util.php');
    
-    if($_PUT){
+    if($_POST){
 
         $ok = false;
         $statuscode = 500;
-        $typePost = intval(isset($_PUT["typePost"])) ? intval($_PUT["typePost"]) : "";
+        $typePost = intval(isset($_POST["typePost"])) ? intval($_POST["typePost"]) : "";
         
         if($typePost == 1)
         {
-            $id = isset($_PUT["id"]) ? $_PUT["id"] : "";
+            $id = isset($_POST["id"]) ? $_POST["id"] : "";
             $selectUser = $pdo->prepare( "SELECT id FROM `$usuariosDB` WHERE id = :id;");
             $selectUser->bindParam(':id', $id);
             $selectUser->execute();
@@ -20,13 +20,13 @@
 
             if($resultUser > 0){
 
-                $nome = isset($_PUT["name"]) ? strval($_PUT["name"]) : null;
-                $email = isset($_PUT["email"]) ? strval($_PUT["email"]) : null;
-                $phone = isset($_PUT["phone"]) ? strval($_PUT["phone"]) : null;
-                $price = isset($_PUT["price"]) ? intval($_PUT["price"]) : null;
-                $password = isset($_PUT["password"]) ? strval($_PUT["password"]) : null;
-                $note = isset($_PUT["note"]) ? strval($_PUT["note"]) : null;
-                $status = isset($_PUT["status"]) ? intval($_PUT["status"]) : null;
+                $nome = isset($_POST["name"]) ? strval($_POST["name"]) : null;
+                $email = isset($_POST["email"]) ? strval($_POST["email"]) : null;
+                $phone = isset($_POST["phone"]) ? strval($_POST["phone"]) : null;
+                $price = isset($_POST["price"]) ? intval($_POST["price"]) : null;
+                $password = isset($_POST["password"]) ? strval($_POST["password"]) : null;
+                $note = isset($_POST["note"]) ? strval($_POST["note"]) : null;
+                $status = isset($_POST["status"]) ? intval($_POST["status"]) : null;
                 $updateAt = date("Y-m-d H:i:s");
 
                 foreach ($selectUser as $row) {  
