@@ -238,6 +238,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  color: #ffffff;
 }
 .btn_add{
   display: flex;
