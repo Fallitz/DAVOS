@@ -23,8 +23,8 @@
                         <img class="logo" id="logo" src="./assets/images/logo2.png"></img>     
                         <div class="header-right">
                             <a class="active" href="/" target="_self" id="home" onclick="openHome()">Home</a>
-                            <a id="register" href="/register" target="_self" onclick="openCadastro()">Register</a>
-                            <a id="admin" href="/admin" target="_self" onclick="openAdmin()">Admin</a>      
+                            <a id="register" href="/page/register" target="_self" onclick="openCadastro()">Register</a>
+                            <a id="admin" href="/page/admin" target="_self" onclick="openAdmin()">Admin</a>      
                         </div>
                     </div>
                     <div class="content_page" id="content_page">
