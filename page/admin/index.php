@@ -32,11 +32,48 @@
                         <!–- ADMIN -–>
                         <div class="adminpage" id="adminpage">
                             <div class="admin-header">
-                                <h1>Welcome Admin</h1>
+                                <button class="btn btn-primary">Create</button>
                             </div>
                             <div class="admin-content">
                                 <div class="admin-content-left">
-                                    <button>ADD</button>
+                                    <div class="card-deck">
+                                        <div class="column">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <input class="card-text" placeholder="Nome" value="Edenilson Souza Santana" disabled/>
+                                                    <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
+                                                    <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
+                                                    <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
+                                                    <input class="card-text" placeholder="Nota" value="" disabled/>
+                                                    <input class="card-text" placeholder="Status" value="Ativo" disabled/>
+                                                    <a href="/page/admin/categories" class="btn btn-primary">X</a>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <input class="card-text" placeholder="Nome" value="Edenilson Souza Santana" disabled/>
+                                                    <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
+                                                    <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
+                                                    <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
+                                                    <input class="card-text" placeholder="Nota" value="" disabled/>
+                                                    <input class="card-text" placeholder="Status" value="Ativo" disabled/>
+                                                    <a href="/page/admin/categories" class="btn btn-primary">X</a>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <input class="card-text" placeholder="Nome" value="Edenilson Souza Santana" disabled/>
+                                                    <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
+                                                    <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
+                                                    <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
+                                                    <input class="card-text" placeholder="Nota" value="" disabled/>
+                                                    <input class="card-text" placeholder="Status" value="Ativo" disabled/>
+                                                    <a href="/page/admin/categories" class="btn btn-primary">X</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>                       

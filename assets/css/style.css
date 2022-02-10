@@ -235,20 +235,73 @@ body {
   width: 100%;
   height: 50px;
   margin-top: 20px;
-  background-color: #009e61;
   justify-content: center;
   align-items: center;
+}
+.btn_add{
+  display: flex;
+  width: 100px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #003cffce;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  float: inline-start;
 }
 .admin-content{
   display: flex;
   position: relative;
+  background-color: #d4d4d4;
   width: 80vw;
   height: 80vh;
+  margin-bottom: 15px;
   justify-content: center;
   align-items: center;
   overflow: scroll;
 }
 
+.card{
+  display: flex;
+  position: relative;
+  width: 80vw;
+  height: 100px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #003cffce;
+  font-size: 20px;
+  float: inline-start;
+}
+.card-body{
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  color: #003cffce;
+  font-size: 20px;
+  float: inline-start;
+}
+.card-text{
+  display: flex;
+  position: relative;
+  height: 50px;
+  margin-top: 10px;
+  margin: 2px;
+  margin-left: 5px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #cacaca;
+  color: #003cffce;
+  font-size: 20px;
+  float: inline-start;
+}
 
 @keyframes zoomin {
   0% {
