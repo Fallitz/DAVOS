@@ -239,7 +239,7 @@ body {
   display: flex;
   position: absolute;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #ffffffe5;
   border-radius: 15px;
   width: 80vw;
   height: 80vh;
