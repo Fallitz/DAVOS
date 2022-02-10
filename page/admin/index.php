@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="./../../assets/css/style.css">
     <link rel="icon" href="./../../assets/images/icon.png">
    
-    <title>DAVOS LEARN - Register</title>
+    <title>DAVOS LEARN - Admin</title>
 </head>
 <body>
     <div class="container-fluid">
