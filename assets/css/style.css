@@ -277,6 +277,7 @@ body {
   font-size: 20px;
   float: inline-start;
 }
+
 .card-body{
   display: flex;
   position: relative;
