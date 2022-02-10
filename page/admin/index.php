@@ -31,7 +31,14 @@
                     <div class="content_page" id="content_page">
                         <!–- ADMIN -–>
                         <div class="adminpage" id="adminpage">
-                            TESTE
+                            <div class="admin-header">
+                                <h1>Welcome Admin</h1>
+                            </div>
+                            <div class="admin-content">
+                                <div class="admin-content-left">
+                                    <button>ADD</button>
+                                </div>
+                            </div>
                         </div>                       
                     </div>
                     <div class="footer_page">
