@@ -232,13 +232,10 @@ body {
 .admin-header{
   display: flex;
   position: relative;
-  width: 100%;
   height: 80px;
   margin-top: 10px;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
-  color: #ffffff;
 }
 .btn_add{
   display: flex;
