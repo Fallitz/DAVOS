@@ -237,6 +237,7 @@ body {
   margin-top: 10px;
   justify-content: center;
   align-items: center;
+  background-color: #ffffff;
 }
 .btn_add{
   display: flex;
