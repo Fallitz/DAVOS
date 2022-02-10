@@ -238,8 +238,7 @@ body {
 .adminpage {
   display: flex;
   position: absolute;
-  flex-direction: column;
-  background-color: #ffffffe5;
+  background-color: #ffffff;
   border-radius: 15px;
   width: 80vw;
   height: 80vh;
@@ -247,9 +246,7 @@ body {
   align-items: center;
   box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.5);
   z-index: 10;
-  animation-name: zoomin;
-  animation-duration: 0.5s;
-  opacity: 0.9;
+
 }
 
 
