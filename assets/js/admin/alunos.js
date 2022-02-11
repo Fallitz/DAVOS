@@ -20,7 +20,15 @@ $(document).on('click', '#CancelarUser', function(){
         }
     });
   
+    
   }); 
+
+  $(document).on('click', '#updatePage', function(){ 
+    $( ".column" ).remove();
+    $('.card-deck').append('<div id="columnListUsers" class="column">');
+    loadAlunos();
+  }); 
+
   
   $(document).on('click', '#register', function(){ 
     var clickBtnValue = this.id;
@@ -37,9 +45,27 @@ $(document).on('click', '#CancelarUser', function(){
     });
   
   }); 
+
+  $(document).on('click', '#deleteLine', function(){ 
+    var clickBtnValue = this.id;
+    var ajaxurl = '/backend/api/v1/pages/register.php',
+    data =  {'action': clickBtnValue};
+  
+    $.post(ajaxurl, data, function (response) {
+        var resposta = JSON.parse(response);
+        if(resposta.type == "register"){
+          $('.admin-header').hide();
+          $( ".column" ).remove();
+          $('.admin-content').append(resposta.data);
+        }
+    });
+  
+  }); 
+  
   
   function removeDiv(elem){
     $(elem).parent('div').parent('div').remove();
+
   }
   
   
@@ -56,7 +82,7 @@ $(document).on('click', '#CancelarUser', function(){
               '<input class="card-text" placeholder="Observação" value="'+ (element.note ? element.note : "") +'" disabled/>'+
               '<input class="card-text" placeholder="Status" value="'+ (element.status ? element.status : "") +'" disabled/>'+
               '<a class="btn btn-primary">Edit</a>'+
-              '<a onClick="removeDiv(this)" id="deleteLine" class="btn btn-primary">X</a>'+
+              '<a id="deleteLine" class="btn btn-primary">X</a>'+
           '</div>'+
        '</div>');
       }
@@ -65,9 +91,3 @@ $(document).on('click', '#CancelarUser', function(){
   }
   
   loadAlunos();
- 
-  setInterval(function(){
-    $( ".column" ).remove();
-    $('.card-deck').append('<div id="columnListUsers" class="column">');
-    loadAlunos();
-  }, 5000);

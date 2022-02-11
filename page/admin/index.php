@@ -32,6 +32,7 @@
                         <div class="adminpage" id="adminpage">
                             <div class="admin-header">
                                 <button id="registerPage" class="btn btn-primary">Register</button>
+                                <button id="updatePage" class="btn btn-primary">Update</button>
                             </div>
 
                             <div class="admin-content">
