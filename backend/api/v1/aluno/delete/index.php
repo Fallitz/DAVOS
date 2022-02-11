@@ -12,9 +12,9 @@
         
         if($typePost == 1)
         {
-            $id = isset($_POST["id"]) ? strval($_POST["id"]) : "";
+            $id = isset($_POST["email"]) ? strval($_POST["email"]) : "";
 
-            $selectUser = $pdo->prepare( "SELECT id, email FROM `$usuariosDB` WHERE id = :id;");
+            $selectUser = $pdo->prepare( "SELECT id, email FROM `$usuariosDB` WHERE email = :id;");
             $selectUser->bindParam(':id', $id);
             $selectUser->execute();
             $resultUser = $selectUser-> rowCount();

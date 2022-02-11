@@ -12,8 +12,8 @@
         
         if($typePost == 1)
         {
-            $id = isset($_POST["id"]) ? $_POST["id"] : "";
-            $selectUser = $pdo->prepare( "SELECT id FROM `$usuariosDB` WHERE id = :id;");
+            $id = isset($_POST["email"]) ? strval($_POST["email"]) : "";
+            $selectUser = $pdo->prepare( "SELECT id FROM `$usuariosDB` WHERE email = :id;");
             $selectUser->bindParam(':id', $id);
             $selectUser->execute();
             $resultUser = $selectUser-> rowCount();
@@ -21,7 +21,7 @@
             if($resultUser > 0){
 
                 $nome = isset($_POST["name"]) ? strval($_POST["name"]) : null;
-                $email = isset($_POST["email"]) ? strval($_POST["email"]) : null;
+                //$email = isset($_POST["email"]) ? strval($_POST["email"]) : null;
                 $phone = isset($_POST["phone"]) ? strval($_POST["phone"]) : null;
                 $price = isset($_POST["price"]) ? intval($_POST["price"]) : null;
                 $password = isset($_POST["password"]) ? strval($_POST["password"]) : null;
@@ -44,7 +44,7 @@
                         $messages[] = 'Nome alterado com sucesso';
                     }
 
-                    if ($email != null) {
+                   /* if ($email != null) {
                         $selectEmail = $pdo->prepare( "SELECT email FROM `$usuariosDB` WHERE email = :email;");
                         $selectEmail->bindParam(':email', $email);
                         $selectEmail->execute();
@@ -59,7 +59,7 @@
                             $messages[] = 'Email alterado com sucesso';
                         }
     
-                    }
+                    }*/
                     
                     if ($phone != null) {
                         $updatePhone = $pdo->prepare( "UPDATE `$usuariosDB` SET phone = :phone, updateAt = :updateAt WHERE id = :id;");
