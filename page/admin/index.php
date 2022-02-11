@@ -23,7 +23,6 @@
                         <img class="logo" id="logo" src="./../../assets/images/logo2.png"></img>     
                         <div class="header-right">
                             <a href="/" target="_self" id="home" onclick="openHome()">Home</a>
-                            <a id="register" href="/page/register" target="_self" onclick="openCadastro()">Register</a>
                             <a class="active" id="admin" href="/page/admin" target="_self" onclick="openAdmin()">Admin</a>      
                         </div>
                     </div>

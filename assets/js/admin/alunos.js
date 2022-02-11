@@ -108,7 +108,7 @@ $(document).on('click', '#CancelarUser', function(){
         $('.column').append('<div class="card">'+
           '<div class="card-body">'+
               '<input id="nomeInput" class="card-text" placeholder="Nome" value="'+ (element.nome ? element.nome : "") +'"/>'+
-              '<input id="emailInput" class="card-text" placeholder="Email" value="'+ (element.email ? element.email : "") +'"/>'+
+              '<input id="emailInput" class="card-text" placeholder="Email" value="'+ (element.email ? element.email : "") +'" disabled/>'+
               '<input id="phoneInput" class="card-text" placeholder="Telefone" value="'+ (element.phone ? element.phone : "") +'"/>'+
               '<input id="priceInput" class="card-text" placeholder="Preço" value="'+ (element.price ? element.price : "") +'"/>'+
               '<input id="noteInput" class="card-text" placeholder="Observação" value="'+ (element.note ? element.note : "") +'"/>'+

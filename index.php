@@ -23,7 +23,6 @@
                         <img class="logo" id="logo" src="./assets/images/logo2.png"></img>     
                         <div class="header-right">
                             <a class="active" href="/" target="_self" id="home" onclick="openHome()">Home</a>
-                            <a id="register" href="/page/register" target="_self" onclick="openCadastro()">Register</a>
                             <a id="admin" href="/page/admin" target="_self" onclick="openAdmin()">Admin</a>      
                         </div>
                     </div>
@@ -33,7 +32,7 @@
                             <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-1">DAVOS LEARN</h1>
                             <p class="mbr-text pb-3 mbr-fonts-style display-7">Uma empresa especializada em ensino de tecnologias do mundo da programação. Tenha consultoria especializada para levar sua transformação digital ao próximo nível.</p>
                             <div class="mbr-section-btn">
-                                <a class="btn btn-md btn-primary display-4" href="/register" target="_self">CRIAR CONTA GRATUITA</a>
+                                <a class="btn btn-md btn-primary display-4" href="/page/admin" target="_self">CRIAR CONTA GRATUITA</a>
                             </div>
                         </div>                 
                     </div>
