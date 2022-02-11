@@ -23,11 +23,11 @@
                 $statuscode = 403;   
             }else{
                
-                $nome = isset($_POST["name"]) ? strval($_POST["name"]) : NULL;
-                $phone = isset($_POST["phone"]) ? strval($_POST["phone"]) : NULL;
-                $price = isset($_POST["price"]) ? intval($_POST["price"]) : NULL;
-                $password = isset($_POST["password"]) ? strval($_POST["password"]) : NULL;
-                $note = isset($_POST["note"]) ? strval($_POST["note"]) : NULL;
+                $nome = isset($_POST["name"]) ? strval($_POST["name"]) : exit;
+                $phone = isset($_POST["phone"]) ? strval($_POST["phone"]) : exit;
+                $price = isset($_POST["price"]) ? intval($_POST["price"]) : exit;
+                $password = isset($_POST["password"]) ? strval($_POST["password"]) : exit;
+                $note = isset($_POST["note"]) ? strval($_POST["note"]) : exit;
                 $createAt = date("Y-m-d H:i:s");
                 $updateAt = date("Y-m-d H:i:s");
                 $status = 1;

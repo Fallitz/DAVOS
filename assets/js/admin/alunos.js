@@ -81,12 +81,12 @@ $(document).on('click', '#CancelarUser', function(){
   }); 
 
   $(document).on('click', '#updateLine', function(){
-    var email = $(this).parent('div').children('input').eq(1).val();
-    var nome = $(this).parent('div').children('input').eq(0).val();
-    var phone = $(this).parent('div').children('input').eq(2).val();
-    var price = $(this).parent('div').children('input').eq(3).val();
-    var note = $(this).parent('div').children('input').eq(4).val();
-    var status = $(this).parent('div').children('input').eq(5).val();
+    var email = $(this).parent('div').children('input').eq(1).val() ?? $(this).parent('div').children('input').eq(1).val();
+    var nome = $(this).parent('div').children('input').eq(0).val() ?? $(this).parent('div').children('input').eq(0).val();
+    var phone = $(this).parent('div').children('input').eq(2).val() ?? $(this).parent('div').children('input').eq(2).val();
+    var price = $(this).parent('div').children('input').eq(3).val() ?? $(this).parent('div').children('input').eq(3).val();
+    var note = $(this).parent('div').children('input').eq(4).val() ?? $(this).parent('div').children('input').eq(4).val();
+    var status = $(this).parent('div').children('input').eq(5).val() ?? $(this).parent('div').children('input').eq(5).val();
 
     var ajaxurl = '/backend/api/v1/aluno/update/', 
     data =  {'typePost': 1, 'email': email, 'nome': nome, 'phone': phone, 'price': price, 'note': note, 'status': status};
