@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./../../assets/css/bootstrap-441-dist-css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./../../assets/css/style.css">
     <link rel="icon" href="./../../assets/images/icon.png">
-    <title>DAVOS LEARN - Admin</title>
+    <title>LEARN - Admin</title>
 </head>
 <body>
     <div class="container-fluid">
@@ -30,54 +30,16 @@
                     <div class="content_page" id="content_page">
                         <!–- ADMIN -–>
                         <div class="adminpage" id="adminpage">
-                            
-                            
-
                             <div class="admin-header">
-                                <button id="register" class="btn btn-primary">Register</button>
+                                <button id="registerPage" class="btn btn-primary">Register</button>
                             </div>
 
                             <div class="admin-content">
                                 <div class="listUsers">
                                     <div class="admin-content-left">
                                         <div class="card-deck">
-                                            <div class="column">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <input class="card-text" placeholder="Nome" value="" disabled/>
-                                                        <input class="card-text" placeholder="Email" value="" disabled/>
-                                                        <input class="card-text" placeholder="Telefone" value="" disabled/>
-                                                        <input class="card-text" placeholder="Preço" value="" disabled/>
-                                                        <input class="card-text" placeholder="Observação" value="" disabled/>
-                                                        <input class="card-text" placeholder="Status" value="" disabled/>
-                                                        <a class="btn btn-primary">Edit</a>
-                                                        <a class="btn btn-primary">X</a>
-                                                    </div>
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <input class="card-text" placeholder="Nome" value="Edenilson Souza Santana" disabled/>
-                                                        <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
-                                                        <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
-                                                        <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
-                                                        <input class="card-text" placeholder="Observação" value="" disabled/>
-                                                        <input class="card-text" placeholder="Status" value="Ativo" disabled/>
-                                                        <a class="btn btn-primary">Edit</a>
-                                                        <a class="btn btn-primary">X</a>
-                                                    </div>
-                                                </div>
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <input class="card-text" placeholder="Nome" value="Edenilson Souza Santana" disabled/>
-                                                        <input class="card-text" placeholder="Email" value="Edenilson.sza@gmail.com" disabled/>
-                                                        <input class="card-text" placeholder="Telefone" value="(79)9 9988-9371" disabled/>
-                                                        <input class="card-text" placeholder="Preço" value="R$ 120,00" disabled/>
-                                                        <input class="card-text" placeholder="Observação" value="" disabled/>
-                                                        <input class="card-text" placeholder="Status" value="Ativo" disabled/>
-                                                        <a class="btn btn-primary">Edit</a>
-                                                        <a class="btn btn-primary">X</a>
-                                                    </div>
-                                                </div>
+                                            <div id="columnListUsers" class="column">
+                                               
                                             </div>
                                             
                                         </div>
@@ -107,4 +69,5 @@
 </body>
 <script type="text/javascript" src="./../../assets/js/jquery-350min.js"></script>
 <script type="text/javascript" src="./../../assets/js/script.js"></script>
+<script type="text/javascript" src="./../../assets/js/admin/alunos.js"></script>
 </html>

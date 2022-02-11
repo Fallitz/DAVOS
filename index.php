@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-441-dist-css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="icon" href="/assets/images/icon.png">
-    <title>DAVOS LEARN - Home</title>
+    <title>LEARN - Home</title>
 </head>
 <body>
     <div class="container-fluid">

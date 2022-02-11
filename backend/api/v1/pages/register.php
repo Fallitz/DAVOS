@@ -1,7 +1,7 @@
 <?php
     if (isset($_POST['action'])) {
         switch ($_POST['action']) {
-            case 'register':
+            case 'registerPage':
                 register();
                 break;
             case 'insert':
@@ -25,15 +25,15 @@
 
     function register() {
         $data =  
-        '<div>'.
+        '<div class="registerForm" id="registerForm">'.
             '<input class="card-text2" placeholder="Nome" value=""/>'.
             '<input class="card-text2" placeholder="Email" value=""/>'.
+            '<input type="password" class="card-text2" placeholder="Senha" value=""/>'.
             '<input class="card-text2" placeholder="Telefone" value=""/>'.
             '<input class="card-text2" placeholder="Preço" value=""/>'.
             '<input class="card-text2" placeholder="Observação" value=""/>'.
-            '<input class="card-text2" placeholder="Status" value=""/>'.
-            '<a class="btn btn-primary">Salvar</a>'.
-            '<a class="btn btn-primary">Cancelar</a>'.
+            '<button id="SalvarUser" class="btn btn-primary">Salvar</button>'.
+            '<button id="CancelarUser" class="btn btn-primary">Cancelar</button>'.
         ' </div> ';
 
         echo json_encode(

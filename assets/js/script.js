@@ -87,20 +87,3 @@ function makeRequest(method, url, data) {
   });
 }
 
-/* =========== JQUERY ============ */
-$(document).ready(function(e){
-  $('button').click(function(){  
-    var clickBtnValue = this.id;
-    var ajaxurl = '/backend/api/v1/pages/register.php',
-    data =  {'action': clickBtnValue};
-    $.post(ajaxurl, data, function (response) {
-        var resposta = JSON.parse(response);
-        if(resposta.type == "register"){
-          $('.listUsers').hide();
-          $('.admin-header').hide();
-          $( ".listUsers" ).remove();
-          $('.admin-content').append(resposta.data);
-        }
-    });
-  });
-});
