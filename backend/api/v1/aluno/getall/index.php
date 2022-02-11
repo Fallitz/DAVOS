@@ -5,7 +5,7 @@
 
     if (!strcasecmp($_SERVER['REQUEST_METHOD'], 'GET')){
        
-        $selectUser = $pdo->prepare( "SELECT * FROM `$usuariosDB`;");
+        $selectUser = $pdo->prepare( "SELECT * FROM `$usuariosDB` WHERE email <> '';");
         $selectUser->bindParam(':email', $email);
         $selectUser->execute();
         $resultUser = $selectUser-> rowCount();
