@@ -104,8 +104,21 @@ $(document).on('click', '#CancelarUser', function(){
   function loadAlunos(){
     $.get( "/backend/api/v1/aluno/getall/", function( data ) {
       var resposta = JSON.parse(data);
+      $('.column').append(
+      '<div class="card">'+
+            '<div class="card-body">'+
+                '<input class="card-text" placeholder="Nome" value=""/>'+
+                '<input class="card-text" placeholder="Email" value="" disabled/>'+
+                '<input class="card-text" placeholder="Telefone" value=""/>'+
+                '<input class="card-text" placeholder="Preço" value=""/>'+
+                '<input class="card-text" placeholder="Observação" value=""/>'+
+                '<input class="card-text" placeholder="Status" value=""/>'+
+                '<div style="width:100px;"></div>'+
+            '</div>'+
+        '</div>');
       resposta.data.forEach(element => {
-        $('.column').append('<div class="card">'+
+        $('.column').append(
+        '<div class="card">'+
           '<div class="card-body">'+
               '<input id="nomeInput" class="card-text" placeholder="Nome" value="'+ (element.nome ?? element.nome) +'"/>'+
               '<input id="emailInput" class="card-text" placeholder="Email" value="'+ (element.email ?? element.email) +'" disabled/>'+

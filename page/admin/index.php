@@ -39,7 +39,6 @@
                                     <div class="admin-content-left">
                                         <div class="card-deck">
                                             <div id="columnListUsers" class="column">
-                                               
                                             </div>
                                             
                                         </div>
