@@ -263,6 +263,9 @@ body {
   align-items: center;
   overflow: scroll;
 }
+.listUsers{
+  display: flex;
+}
 
 .card{
   display: flex;
@@ -295,6 +298,22 @@ body {
   position: relative;
   height: 80px;
   margin-left: 3px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f0f0f0;
+  color: #003cffce;
+  font-size: 20px;
+  float: inline-start;
+  border: none;
+}
+
+.card-text2{
+  display: flex;
+  position: relative;
+  width: 30vw;
+  height: 80px;
+  margin: 10px;
   justify-content: center;
   align-items: center;
   text-align: center;
