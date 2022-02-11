@@ -110,9 +110,9 @@ $(document).on('click', '#CancelarUser', function(){
               '<input id="nomeInput" class="card-text" placeholder="Nome" value="'+ (element.nome ?? element.nome) +'"/>'+
               '<input id="emailInput" class="card-text" placeholder="Email" value="'+ (element.email ?? element.email) +'" disabled/>'+
               '<input id="phoneInput" class="card-text" placeholder="Telefone" value="'+ (element.phone ?? element.phone) +'"/>'+
-              '<input id="priceInput" class="card-text" placeholder="Preço" value="'+ (element.price ?? element.price) +'"/>'+
+              '<input id="priceInput" class="card-text" placeholder="Preço" value="'+ (element.price == 0 ? "" : element.price) +'"/>'+
               '<input id="noteInput" class="card-text" placeholder="Observação" value="'+ (element.note ?? element.note) +'"/>'+
-              '<input id="statusInput" class="card-text" placeholder="Status" value="'+ (element.status ?? element.status) +'"/>'+
+              '<input id="statusInput" class="card-text" placeholder="Status" value="'+ (element.status == 0 ? "" : element.status) +'"/>'+
               '<a id="updateLine" class="btn btn-primary">Edit</a>'+
               '<a id="deleteLine" class="btn btn-primary">X</a>'+
           '</div>'+
