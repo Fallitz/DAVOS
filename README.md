@@ -1,2 +1,1 @@
-# DAVOS
-https://davos.fallitz.xyz
+# HTML-CSS-JAVASCRIPT-PHP
